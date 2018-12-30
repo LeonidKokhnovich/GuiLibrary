@@ -17,8 +17,11 @@ A simple GUI Widget library for TFT screens.
 #include <stdint.h>
 #include "LinkedList.h"
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ILI9341.h>
+// #include <Adafruit_ILI9341.h>
+#include <Adafruit_HX8357.h>
 #include "TouchScreen.h"
+
+#define Adafruit_ILI9341 Adafruit_HX8357
 
 // sometimes we want to disable this
 //#define USING_SD 1
@@ -53,11 +56,14 @@ A simple GUI Widget library for TFT screens.
 
 #define ILI9341_GREY 0x7BEF
 
+#define ILI9341_WHITE 0xFFFF
+#define ILI9341_LIGHTGREY 0xF800
+#define ILI9341_DARKGREY 0x03E0
 
 // default colours
-#define DEFAULT_COLOUR_BG ILI9341_GREY
-#define DEFAULT_COLOUR_FG ILI9341_BLACK
-#define DEFAULT_COLOUR_BORDER ILI9341_WHITE
+#define DEFAULT_COLOUR_BG 0xF800
+#define DEFAULT_COLOUR_FG 0x0000
+#define DEFAULT_COLOUR_BORDER 0xFFFF
 
 
 class GuiElement {
