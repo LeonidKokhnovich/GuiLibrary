@@ -259,7 +259,7 @@ private:
 ////////////////////
 class GuiPanel : public GuiElement {
 public:
-    GuiPanel(void);
+    GuiPanel(void) : GuiElement() {};
     GuiPanel(int16_t x, int16_t y, int16_t width, int16_t height) : GuiElement(x, y, width, height) {};
     void draw(void);
 };
